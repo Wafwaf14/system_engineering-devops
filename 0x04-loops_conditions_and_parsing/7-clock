@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#print time for 12 long hours.
+
+hour=0
+
+minute=1
+
+while [ $hour -le 12 ]
+
+do
+	echo "hour: $hour"
+
+    while [ $minute -le 59 ]
+    do
+        echo "$minute"
+
+        ((minute++))
+    done
+
+    minute=1
+
+    ((hour++))
+
+done
+
