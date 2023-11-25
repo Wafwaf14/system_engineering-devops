@@ -13,4 +13,4 @@ else
 kill "$highlander_pid"
 
 echo "Killed"
-fi
+
