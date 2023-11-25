@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #displays all shell processes
-#shellcheck disable=SC2009
+#shellcheck
 
-ps -ef | grep bash | grep -v grep
+./1-list_your_processes | grep "bash"
 
-echo "$$"
