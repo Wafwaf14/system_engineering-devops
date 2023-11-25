@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#displays all shell processes
+#shellcheck disable=SC2009
+
+ps -ef | grep bash | grep -v grep
+
+echo "$$"

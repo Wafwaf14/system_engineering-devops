@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#A script that terminates another script
+#find the scripts process i.d
+
+pid=$(pgrep -f "4-to_infinity_and_beyond")
+
+#Send the kill signal to the process
+
+kill "$pid"
+
+echo "Terminated"

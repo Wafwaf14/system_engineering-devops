@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#Terminates a known process without KILL cmd.
+# Store the PID of the 4-to_infinity_and_beyond process in a variable
+
+pid=$(pgrep -f 4-to_infinity_and_beyond)
+
+# Check if the process is running
+if [ -n "$pid" ]; then
+
+# Send a SIGTERM signal to the process to gracefully terminate it
+   pkill -f 4-to_infinity_and_beyond
+
+    echo "4-to_infinity_and_beyond process stopped."
+else
+    echo "4-to_infinity_and_beyond process not running."
+fi
