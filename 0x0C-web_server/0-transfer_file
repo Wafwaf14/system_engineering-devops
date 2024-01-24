@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# script that transfer a file from a clint to a server 
+
+# Checking if all required params are provided
+if [ "$#" -ne 4 ]; then
+  echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+  exit 1
+fi
+
+# Assigning params to variables
+PATH_TO_FILE="$1"
+IP="$2"
+USERNAME="$3"
+PATH_TO_SSH_KEY="$4"
+
+# Use scp to transfer the file to the server's home directory((~))
+# Disabling strict host key checking with "-o StrictHostKeyChecking=no"
+scp -o StrictHostKeyChecking=no -i "$PATH_TO_SSH_KEY" "$PATH_TO_FILE" "${USERNAME}@${IP}:~/"
+
+# Checking if the scp command was successfull
+if [ "$?" -eq 0 ]; then
+  echo "File transfer successful."
+else
+  echo "File transfer failed."
+  exit 1
+fi
