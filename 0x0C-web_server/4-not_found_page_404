@@ -1,0 +1,21 @@
+#!/bin/bash
+# This script configures Nginx to have a custom 404 page with the string "Ceci n'est pas une page".
+
+# Install Nginx if not already installed
+apt-get update
+apt-get install -y nginx
+
+# Create the custom 404 page
+echo "location / {" > /etc/nginx/sites-available/default
+echo "    error_page 404 /404.html;" >> /etc/nginx/sites-available/default
+echo "    location = /404.html {" >> /etc/nginx/sites-available/default
+echo "        root /usr/share/nginx/html;" >> /etc/nginx/sites-available/default
+echo "        internal;" >> /etc/nginx/sites-available/default
+echo "    }" >> /etc/nginx/sites-available/default
+echo "}" >> /etc/nginx/sites-available/default
+
+# Create the custom 404 page content
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/404.html
+
+# Restart Nginx to apply the changes
+service nginx restart
