@@ -1,4 +1,4 @@
 #!/bin/bash
 # This script provides the domain name for the web server and configures DNS.
 
-echo "yourdomain.tech"
+echo "elhijarywafaa.tech"
