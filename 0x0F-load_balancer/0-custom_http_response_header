@@ -33,7 +33,7 @@ EOL
 fi
 # adding x-serverd-by header
 # Check if the location block already exists
-if ! grep -q "add_header X-Served-By" "$config_file"; then
+if ! grep -q "add_header X-Served-By" "$hostname is running on"; then
     new_string=$(cat <<-EOL
 \t\t# as directory, then fall back to displaying a 404.
 \t\tadd_header X-Served-By "$name";
