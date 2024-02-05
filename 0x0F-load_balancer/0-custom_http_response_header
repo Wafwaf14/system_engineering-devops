@@ -49,7 +49,7 @@ done
 echo "Hello World!" > /var/www/html/index.html
 
 # create new error page
-echo "Ceci n'est pas une page" > /var/www/html/error_404.html
+echo "the erorr page" > /var/www/html/error_404.html
 
 # backup default server config file
 sudo cp /etc/nginx/sites-enabled/default nginx-sites-enabled_default.backup
