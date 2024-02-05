@@ -40,8 +40,8 @@ frontend elhijarywafaa-tech-frontend
 
 backend elhijarywafaa-tech-backend
     balance roundrobin
-    409416-web-01 54.237.100.73:80 check
-    409416-web-02 34.224.4.154:80 check
+    server 409416-web-01 54.237.100.73:80 check
+    server 409416-web-02 34.224.4.154:80 check
 "
 
 # shellcheck disable=SC2154
